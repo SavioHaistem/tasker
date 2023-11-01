@@ -15,8 +15,13 @@ public class Task {
         this.complete = !complete;
     }
 
+    private String taskStatsSimbol(Boolean stats) {
+        return stats ? "X" : " ";
+    }
+
     @Override
     public String toString() {
-        return String.format("-(%d): %s (%b)", id, name, complete);
+
+        return String.format("-(%d): %s (%s)", id, name, taskStatsSimbol(complete));
     }
 }
